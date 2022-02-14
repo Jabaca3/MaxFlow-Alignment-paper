@@ -59,9 +59,8 @@
 		\textbf{My Solution to the following problem}
 	\end{center}
 
-	Traversing the RNA text $T$ and collecting all substrings of size 3, each codon being 3 nucleotides long ($S_{i}$ for each codon $i$ in the string $T$). This is done a fixed number of times that gets absorbed by big-$O$ notation $O(3m) => O(m)$. After converting each codon to amino acid ($S_{ci}$ where $c$ is the amino acid conversion of $i$) we can do a maximum prefix overlap and calculate $M_{i}$ values per each converted codon in pattern $P$ ($S_{ci}$\text{\$}$P$) in $O(3n) => O(n)$ time. We can find if $S_{ci} \in P$ if $|S_{ci}| = M_{i}$. The final complexity analysis would result in $O(3m+3n) => O(m+n)$ time.
+	Traversing the RNA text $T$ and collecting all substrings of size 3, each codon being 3 nucleotides long ($S_{i}$ for each codon $i$ in the string $T$). It is possible that there are characters left over in $T$ once you're breaking up the substrings by groups of 3. In this scinario we simply can ignore the left over characters. This substrings of 3 is done a fixed number of times that gets absorbed by big-$O$ notation $O(3m) => O(m)$. After converting each codon to amino acid ($S_{ci}$ where $c$ is the amino acid conversion of $i$) we can do a maximum prefix overlap and calculate $M_{i}$ values per each converted codon in pattern $P$ ($S_{ci}$\text{\$}$P$) in $O(3n) => O(n)$ time. We can find if $S_{ci} \in P$ if $|S_{ci}| = M_{i}$. The final complexity analysis would result in $O(3m+3n) => O(m+n)$ time.
 
-	\pagebreak
 
 
 	\item \textbf{(20 points)}
@@ -88,20 +87,19 @@
 	\textbf{Conservation of flow across nodes}
 	\linebreak
 	\linebreak
-	$\displaystyle\sum_{e \in E_{(*v)}}f_e \leq M_e \geq \displaystyle\sum_{e \in E_{(v*)}}f_e$ \end{center}
+	$\displaystyle\sum_{e \in E_{(v*)}}f_e = \displaystyle\sum_{e \in E_{(*v)}}f_e$ \end{center}
 
-	This equation describes the conservation of flow. Conservation of flow begins with the inflow from previous edge to the weight of a verticie $M_e$. Of course, the weight of the vertice must be greater or equal to the summation of the inflow edges described by  $\displaystyle\sum_{e \in E_{(*v)}}f_e \leq M_e$. Now the outflow of a vertice can only realistically be less than or equal to the weight of the corresponding verticie, described by  $M_e \geq \displaystyle\sum_{e \in E_{(v*)}}f_e$ because such a bottleneck may exist the flow is conserved through the verticies
+	This equation describes the conservation of flow. conservation suggest the sum of the inflow must be equal to the sum of the outflow of nodes. therefore inflow $\displaystyle\sum_{e \in E_{(v*)}}f_e$ is euqal to the outflow $\displaystyle\sum_{e \in E_{(*v)}}f_e$
 	\pagebreak
 
 	\begin{center}
 		\textbf{Maximum flow across an edge}
 		\linebreak
 		\linebreak
-		$Max(f_{e(a,b)}) = M_{e(a)}$ 
+		$f_e = M_e$ 
 	\end{center}
 
-	This equation describes the total maximum flow accross an edge. The max flow $(f)$ in an edge $e(a,b)$ must be equal to the previous verticies weight $a$ denoted by: $M_{e(a)}$. This is because $e(a,b)$ can not aquire more feed than what verticie $a$ has aquired.
-	\linebreak
+	This equation describes the total maximum flow accross an edge. The maximum flow across an edge is dependent of the previous nodes weight before it $M_e$. Because $M_e$ suggest the limit weight of a node it is understandable that it is the constraint to the total amount of flow for the following edge. Therefore $M_e$ is the maximum flow of edge $f_e$
 	
 	\begin{center}
 		\textbf{Outflow at source is equal to the inflow at sink}
