@@ -25,8 +25,8 @@
 %\usepackage{multicolumn}
 
 \usepackage{multirow}
-\title{Joseph Baca \\ Homework 2}
-\author{CS 4364/5364\\Spring 2022}
+\title{Homework 2}
+\author{CS 4364/5364\\Spring 2022 \\ Joseph Baca}
 
 % Activate to display a given date or no date
 \date{Due: February 14, 2022}							
@@ -59,7 +59,7 @@
 		\textbf{My Solution to the following problem}
 	\end{center}
 
-	Traversing the RNA text $T$ and collecting all substrings of size 3, each codon being 3 nucleotides long ($S_{i}$ for each codon $i$ in the string $T$). It is possible that there are characters left over in $T$ once you're breaking up the substrings by groups of 3. In this scinario we simply can ignore the left over characters. This substrings of 3 is done a fixed number of times that gets absorbed by big-$O$ notation $O(3m) => O(m)$. After converting each codon to amino acid ($S_{ci}$ where $c$ is the amino acid conversion of $i$) we can do a maximum prefix overlap and calculate $M_{i}$ values per each converted codon in pattern $P$ ($S_{ci}$\text{\$}$P$) in $O(3n) => O(n)$ time. We can find if $S_{ci} \in P$ if $|S_{ci}| = M_{i}$. The final complexity analysis would result in $O(3m+3n) => O(m+n)$ time.
+	Traversing the RNA text $T$ and collecting all substrings of size 3, each codon being 3 nucleotides long ($S_{i}$ for each codon $i$ in the string $T$). It is possible that there are characters left over in $T$ once you're breaking up the substrings by groups of 3. In this scinario we simply can ignore the left over characters. This substrings of 3 is done a fixed number of times that gets absorbed by big-$O$ notation $O(3m) => O(m)$. After converting each codon to amino acid ($S_{ci}$ where $c$ is the amino acid conversion of $i$) we can do a maximum prefix overlap and calculate $M_{i}$ values per each converted codon in pattern $P$ ($S_{ci}$\text{\$}$P$) in $O(3n) => O(n)$ time. We can find if $S_{ci} \in P$ if $|S_{ci}| = M_{i}$. The final complexity analysis would result in $O(3m+3n) => O(m+n)$.
 
 
 
@@ -90,8 +90,7 @@
 	$\displaystyle\sum_{e \in E_{(v*)}}f_e = \displaystyle\sum_{e \in E_{(*v)}}f_e$ \end{center}
 
 	This equation describes the conservation of flow. conservation suggest the sum of the inflow must be equal to the sum of the outflow of nodes. therefore inflow $\displaystyle\sum_{e \in E_{(v*)}}f_e$ is euqal to the outflow $\displaystyle\sum_{e \in E_{(*v)}}f_e$
-	\pagebreak
-
+		\pagebreak
 	\begin{center}
 		\textbf{Maximum flow across an edge}
 		\linebreak
